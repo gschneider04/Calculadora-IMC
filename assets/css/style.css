@@ -263,4 +263,13 @@ img:hover {
     }
 }
 
+@media (max-width: 368px) {
+
+    body, input, button {
+        font-size: 10px;
+    }
+
+}
+
+
 
