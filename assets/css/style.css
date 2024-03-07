@@ -1,0 +1,266 @@
+@import url('https://fonts.cdnfonts.com/css/poppins');
+
+/*-------------------- FAZENDO O ZERAMENTO PARA INICIAR A CRIAÇÃO DO SITE --------------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --background_night: rgb(46, 43, 43);
+    --background_day: rgba(243, 242, 242, 0.842);
+}
+
+/*-------------------- ESTILIZAÇÃO DO BODY --------------------*/
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /*-------------------- OPCIONAL POIS VOU CRIAR UM SISTEMA DE SELEÇÃO DE TEMA --------------------*/
+    background-color: rgba(243, 242, 242, 0.842);
+    color: white;
+    transition: background 0.2s linear;
+}
+
+/*-------------------- ESTILIZAÇÃO PARA MUDANÇA DE TEMA --------------------*/
+
+body.dark {
+    background-color: rgb(46, 43, 43);
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+
+}
+
+.label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: absolute;
+    top: 20px;
+    left: 50vw;
+    height: 40px;
+    width: 100px;
+    
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+
+    height: 35px;
+    width: 35px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(60px);
+}
+
+.fa-moon {
+    color: rgba(243, 247, 10, 0.616);
+}
+
+.fa-sun {
+    color:#ccf806;
+}
+
+
+
+
+/*-------------------- ESTILIZAÇÃO NORMAL DA APLICAÇÃO -------------------- */
+main {
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+}
+
+.container {
+    width: 500px;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-color: rgb(39, 38, 38);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+span {
+    color: white;
+    width: 85%;
+    align-items: center;
+    
+}
+
+.divNome, .divIdade, .divAltura, .divPeso, .divCalc {
+    width: 70%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+#img img {
+    width: 80%;
+    position: relative;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(78, 78, 78);
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-top: 3px;
+}
+
+.input-field input {
+    border: none;  
+    color: white;
+    padding: 0 0.9rem;
+
+} 
+
+.input-field_a {
+    padding: 0.5rem; 
+}
+
+input, button {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(78, 78, 78);
+}
+
+button {
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
+
+.input-field_a a {
+    color: green;
+}
+
+
+/* -------------------- CONFIGURANDO CORES PARA RESULTADO IMC -------------------- */
+
+.attention {
+    color: #dc2626;
+}
+
+.normal {
+    color: #16a34a;
+}
+
+/* -------------------- CONFIGURANDO ANIMAÇÕES -------------------- */
+
+@keyframes image_animation {
+    0% {left: 0px; top: 0px;}
+    25% {left: -250px; top: 0px;}
+    50% {left: 250px; top: 0px;}
+    75% {left: -250px; top: 0px;}
+    100% {left: 0px; top: 0px;}
+}
+
+button:hover {
+    background-color: rgba(34, 121, 34, 0.616);
+    transition: 1s;
+}
+
+h1:hover {
+    color: rgba(10, 202, 10, 0.705);
+    transition: 1s;
+}
+
+img:hover {
+    animation-name: image_animation;
+    transform: scale(1.3);
+    animation-duration: 5s;
+
+}
+
+
+/* -------------------- MEDIA QUERYES --------------------*/
+
+@media (max-width: 1290px) {
+    body, input, button {
+        font-size: 20px;
+    }
+    #img img {
+        width: 0px;
+    }
+}
+
+@media (max-width: 1080px) {
+    body, input, button {
+        font-size: 20px;
+    }
+    #img img {
+        width: 0;
+    }
+    
+
+}
+
+@media (max-width: 480px) {
+    
+    body, input, button {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: 28px;
+    }
+    #img img {
+        width: 0;
+    }
+
+    .container {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0px;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    .dark_ligth, #dark_ligth {
+        display: none;
+    }
+}
+
+

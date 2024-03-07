@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA DE IMC</title>
+    <link rel="icon" href="/assets/imagens/calculator.svg" sizes="32x32">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ADICIONANDO ALTERAÇÃO DE TEMA -->
+    <div class="dark_ligth" id="dark_ligth">
+        <input type="checkbox" class="checkbox" id="chk">
+        <label class="label" for="chk">
+
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="ball"></div>
+        </label>
+    </div>
+
+    <main>
+
+        <div class="img" id="img">
+            <img src="/assets/imagens/health.svg" alt="">
+        </div>
+
+        <div class="container">
+            <h1>Calculadora de IMC</h1>
+        <!-- CRIANDO AS DIVS COM INPUTS PARA REGISTRAR OS VALORES QUE VÃO SER ARMAZENADOS EM UMA CONST NO JS -->
+            <div class="divNome">
+                <label for="nome">Nome</label>
+                    <div class="input-field">
+                        <i class="fa-solid fa-id-card"></i>
+                        <input type="text" id="nome" required >
+                    </div>
+            </div>
+
+            <div class="divIdade">
+                <label for="idade">Idade</label>
+                    <div class="input-field">
+                        <i class="fa-solid fa-cake-candles"></i>
+
+                        <!-- <input type="number" id="idade" placeholder="Digite sua Idade" required> -->
+                        <!-- UTILIZANDO UMA FUNÇÃO NA QUAL ACHEI ATRAVÉS DE PESQUISAS PARA LIMITAR A QUANTIDADE DE CARACTERES NUMÉRICOS -->
+                        <input id="idade" required
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        type = "number" maxlength = "3">
+
+                    </div>
+                </div>
+
+            <div class="divAltura">
+                <label for="altura">Altura (M)</label>
+
+                    <div class="input-field">
+                        <i class="fa-solid fa-ruler"></i>
+
+                        <input id="altura" required
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        type = "number" maxlength = "3">
+
+                        <span>M</span>
+                    </div>
+
+            </div>
+
+            <div class="divPeso">
+                <label for="peso">Peso (KG)</label>
+                    <div class="input-field">    
+                        <i class="fa-solid fa-weight-hanging"></i>
+
+                        <input id="peso" required
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        type = "number" maxlength = "3">
+
+                        <span>Kg</span>
+                    </div>
+            </div>
+            <!-- CRIANDO O INPUT QUE IRÁ REALIZAR O CALCULO -->
+            <div class="divCalc">
+                <button onclick="calcIMC()">Calcular IMC</button>
+            </div>
+            <!-- SPAN QUE IRÁ MOSTRAR O RESULTADO DO CALCULO -->
+                <span id="resultado"></span>
+                <div class="input-field_a"> 
+                    <a href="https://mundoeducacao.uol.com.br/saude-bem-estar/imc.htm" target="_blank">Mais informações sobre o IMC <i class="fa-solid fa-link"></i></a>
+                    
+                </div>
+        </div>
+
+        
+    </main>
+
+    
+
+
+
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
