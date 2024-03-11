@@ -23,6 +23,8 @@ body {
     align-items: center;
     justify-content: center;
 
+    overflow-x: hidden;
+    overflow-y: hidden;
     /*-------------------- OPCIONAL POIS VOU CRIAR UM SISTEMA DE SELEÇÃO DE TEMA --------------------*/
     background-color: rgba(243, 242, 242, 0.842);
     color: white;
@@ -89,7 +91,7 @@ body.dark {
 
 
 
-/*-------------------- ESTILIZAÇÃO NORMAL DA APLICAÇÃO -------------------- */
+/*-------------------- ESTILIZAÇÃO DA APLICAÇÃO -------------------- */
 main {
     display: flex;
     justify-content: center;    
@@ -111,9 +113,9 @@ main {
 
 span {
     color: white;
-    width: 85%;
-    align-items: center;
-    
+    width: 70%;
+    align-items: center;   
+    justify-content: center;
 }
 
 .divNome, .divIdade, .divAltura, .divPeso, .divCalc {
@@ -150,6 +152,7 @@ span {
 }
 
 input, button {
+    /* width: 80%; */
     margin-top: 10px;
     padding: 10px;
     font-size: 20px;
@@ -197,7 +200,7 @@ button:hover {
 
 h1:hover {
     color: rgba(10, 202, 10, 0.705);
-    transition: 1s;
+    transition: 1.1s;
 }
 
 img:hover {
@@ -210,66 +213,145 @@ img:hover {
 
 /* -------------------- MEDIA QUERYES --------------------*/
 
-@media (max-width: 1290px) {
-    body, input, button {
-        font-size: 20px;
+@media (max-width: 1400px) {
+    body {
+        font-size: 25px;
+        background-color: rgb(46, 43, 43);
+        color: white;
     }
-    #img img {
-        width: 0px;
+    .divCalc button{
+        font-size: 25px;
+        width: 100%;
     }
-}
-
-@media (max-width: 1080px) {
-    body, input, button {
-        font-size: 20px;
-    }
-    #img img {
-        width: 0;
-    }
-    
-
-}
-
-@media (max-width: 480px) {
-    
-    body, input, button {
-        font-size: 15px;
-    }
-    h1 {
-        font-size: 28px;
-    }
-    #img img {
-        width: 0;
+    input, button {
+        width: 100%;
+        font-size: 25px;
+        border-radius: 5px;
+        margin: auto;
+        padding: 8px;
     }
 
+    #spann {
+        display: none;
+    }
     .container {
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-        border-radius: 0px;
-    }
-    main {
         display: flex;
-        justify-content: center;
-        align-items: center;
         width: 100%;
         height: 100%;
-        border-radius: 0px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    #img img {
+        display: none;
     }
 
     .dark_ligth, #dark_ligth {
         display: none;
     }
+
+    #resultado {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 80%;
+        font-size: 13px;
+    }
 }
 
-@media (max-width: 368px) {
-
-    body, input, button {
-        font-size: 10px;
+@media (max-width: 1024px) {
+    
+    body {
+        font-size: 20px;
+        background-color: rgb(46, 43, 43);
+        color: white;
+    }
+    .divCalc button{
+        font-size: 20px;
+        width: 100%;
+    }
+    input, button {
+        width: 100%;
+        font-size: 20px;
+        border-radius: 5px;
+        margin: auto;
+        padding: 8px;
     }
 
+    #spann {
+        display: none;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
+
+    #img img {
+        display: none;
+    }
+
+    .dark_ligth, #dark_ligth {
+        display: none;
+    }
+
+    #resultado {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 60%;
+        font-size: 15px;
+    }
 }
 
+@media (max-width: 767px) {
 
+    body {
+        font-size: 10px;
+        background-color: rgb(46, 43, 43);
+        color: white;
+    }
+    .divCalc button{
+        font-size: 18px;
+        width: 100%;
+    }
+    input, button {
+        font-size: 13px;
+        border-radius: 5px;
+        margin: auto;
+        padding: 8px;
+    }
+    h1{
+        font-size: 25px;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+    }
 
+    #spann {
+        display: none;
+    }
+
+    #img img {
+       display: none;
+    }
+
+    .dark_ligth, #dark_ligth {
+        display: none;
+    }
+
+    #resultado {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        width: 50%;
+        font-size: 13px;
+    }
+}
